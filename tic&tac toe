@@ -1,0 +1,31 @@
+field = [[""] * 3 for i in range(3) ]
+def show():
+    print(f" 0 1 2")
+    for i in range(3):
+        print(f"{i} {field[i][0]} {field[i][1]} {field[i][2]}")
+show()
+def ask():
+    x,y = map (int,input("  Ваш ход:").split())
+    return x,y
+ask()
+num = 0
+while True:
+    num += 1
+
+    show()
+
+    if num % 2 == 1:
+        print("Ходит крестик")
+    else:
+        print("Ходит нолик")
+
+    x,y = ask()
+
+    if num % 2 == 1:
+        field[x][y] = "x"
+    else:
+        field[x][y] = "0"
+
+    if num == 9:
+         break
+         print("Ничья")
